@@ -1,6 +1,6 @@
-import LocationForm from "./LocationForm.jsx"
+import LocationForm from "./LocationForm"
 import MapPicker from "./MapPicker"
-import ModeToggle, { modeHint } from "./ModeToggle.jsx"
+import ModeToggle, { modeHint } from "./ModeToggle"
 
 export default function RegionPicker({
   spots,

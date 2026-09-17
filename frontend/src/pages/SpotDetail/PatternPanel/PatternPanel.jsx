@@ -1,4 +1,5 @@
-import { formatHour } from "../../utils/wind"
+import { formatHour } from "../../../utils/wind"
+import HourBar from "./HourBar.jsx"
 
 export default function PatternPanel({ pattern }) {
   return (
@@ -17,11 +18,7 @@ export default function PatternPanel({ pattern }) {
           </p>
           <div className="hour-bars">
             {Object.entries(pattern.hourly_rideable_probability).map(([hour, probability]) => (
-              <div className="hour-bar" key={hour}>
-                <span>{formatHour(hour)}</span>
-                <b style={{ height: `${Math.max(8, probability * 120)}px` }} title={`${Math.round(probability * 100)}%`} />
-                <small>{Math.round(probability * 100)}%</small>
-              </div>
+              <HourBar key={hour} hour={hour} probability={probability} />
             ))}
           </div>
         </>

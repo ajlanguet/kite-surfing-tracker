@@ -1,23 +1,4 @@
-async function getJson(path) {
-  const response = await fetch(path)
-  if (!response.ok) {
-    throw new Error(`${response.status} ${path}`)
-  }
-  return response.json()
-}
-
-async function sendJson(path, body) {
-  const response = await fetch(path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  })
-  if (!response.ok) {
-    const detail = await response.text()
-    throw new Error(detail || `${response.status} ${path}`)
-  }
-  return response.json()
-}
+import { getJson, sendJson } from "./client.js"
 
 export function fetchSpots() {
   return getJson("/api/spots/")
@@ -57,24 +38,4 @@ export function untrackSpot(slug) {
 
 export function setFavorite(slug, isFavorite) {
   return sendJson(`/api/spots/${slug}/favorite/`, { is_favorite: isFavorite })
-}
-
-export function fetchForecasts(slug) {
-  return getJson(`/api/weather/${slug}/forecasts/`)
-}
-
-export function fetchObservations(slug) {
-  return getJson(`/api/weather/${slug}/observations/`)
-}
-
-export function fetchSummaries(slug) {
-  return getJson(`/api/weather/${slug}/summaries/`)
-}
-
-export function fetchPattern(slug) {
-  return getJson(`/api/patterns/${slug}/`)
-}
-
-export function fetchOutlook(slug) {
-  return getJson(`/api/patterns/${slug}/outlook/`)
 }

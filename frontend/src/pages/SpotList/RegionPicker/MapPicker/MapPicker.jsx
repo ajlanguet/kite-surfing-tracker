@@ -3,21 +3,11 @@ import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { bindDraw } from "./bindDraw.js"
 import { createLeafletMap } from "./createLeafletMap.js"
-import { clearSelectionLayers, renderPin, renderPolygonEditor } from "./PolygonEditor.js"
+import { focusMap } from "./focusMap.js"
+import { renderPolygonEditor } from "./PolygonEditor.js"
+import { clearSelectionLayers, renderPin } from "./selectionLayers.js"
+import { setMapInteraction } from "./setMapInteraction.js"
 import { renderSpotMarkers } from "./SpotMarkers.js"
-
-function setMapInteraction(map, { mode, hasPolygon }) {
-  const drawing = mode === "draw" && !hasPolygon
-  if (drawing) {
-    map.dragging.disable()
-    map.getContainer().style.cursor = "crosshair"
-    map.getContainer().classList.add("is-drawing")
-    return
-  }
-  map.dragging.enable()
-  map.getContainer().style.cursor = ""
-  map.getContainer().classList.remove("is-drawing")
-}
 
 export default function MapPicker({ spots, mode, selection, focusTarget, onSelect, onSpotClick }) {
   const rootRef = useRef(null)
@@ -106,11 +96,7 @@ export default function MapPicker({ spots, mode, selection, focusTarget, onSelec
     if (!map || !focusTarget) return
     userMovedRef.current = true
     skipFitRef.current = true
-    if (focusTarget.bounds) {
-      map.flyToBounds(focusTarget.bounds, { padding: [36, 36], maxZoom: 14, duration: 0.7 })
-      return
-    }
-    map.flyTo([focusTarget.latitude, focusTarget.longitude], focusTarget.zoom || 12, { duration: 0.7 })
+    focusMap(map, focusTarget)
   }, [focusTarget])
 
   return (
