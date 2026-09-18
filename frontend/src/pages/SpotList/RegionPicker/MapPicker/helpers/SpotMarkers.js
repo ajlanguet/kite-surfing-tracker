@@ -1,5 +1,5 @@
 import L from "leaflet"
-import { polygonFromSpot, toLatLngs } from "../geometry.js"
+import { polygonFromSpot, toLatLngs } from "../../helpers/geometry.js"
 
 export function renderSpotMarkers(map, group, spots, onSpotClick, { fitToSpots = false } = {}) {
   group.clearLayers()

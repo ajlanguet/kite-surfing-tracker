@@ -3,7 +3,7 @@ import SpotSearch from "./Search"
 import SearchResults from "./Search/SearchResults.jsx"
 import SpotListHero from "./SpotListHero.jsx"
 import Watchlist from "./Watchlist"
-import { useSpotList } from "./useSpotList.js"
+import { useSpotList } from "./helpers/useSpotList.js"
 
 export default function SpotList() {
   const list = useSpotList()

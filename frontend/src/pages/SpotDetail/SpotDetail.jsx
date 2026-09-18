@@ -3,7 +3,7 @@ import OutlookPanel from "./OutlookPanel"
 import PatternPanel from "./PatternPanel"
 import RecentDaysPanel from "./RecentDaysPanel"
 import SpotHeader, { SpotDetailNav } from "./SpotHeader"
-import { useSpotDetail } from "./useSpotDetail.js"
+import { useSpotDetail } from "./helpers/useSpotDetail.js"
 
 export default function SpotDetail() {
   const { spot, outlook, summaries, pattern, error, busy, upcoming, onFavorite, onHistory, onUntrack } =

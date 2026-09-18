@@ -1,2 +1,2 @@
 export { default } from "./ModeToggle.jsx"
-export { modeHint } from "./modeHint.js"
+export { modeHint } from "./helpers/modeHint.js"

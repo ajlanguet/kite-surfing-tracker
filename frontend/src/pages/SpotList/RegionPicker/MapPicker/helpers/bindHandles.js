@@ -1,5 +1,5 @@
 import L from "leaflet"
-import { centroid, insertVertex, midpoint, pointFrom } from "../geometry.js"
+import { centroid, insertVertex, midpoint, pointFrom } from "../../helpers/geometry.js"
 import { handleIcon } from "./handleIcon.js"
 
 export function bindVertexHandles(polygon, { handleGroup, polygonRef, paint, emit, vertexMarkers }) {

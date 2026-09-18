@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { fetchSpots, lookupMapPoint, searchPlaces, trackPlace } from "../../api"
+import { fetchSpots, lookupMapPoint, searchPlaces, trackPlace } from "../../../api"
 import { mapFocusFromPlace } from "./mapFocus.js"
 
 export function useSpotList() {

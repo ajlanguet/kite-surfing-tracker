@@ -1,5 +1,5 @@
 import L from "leaflet"
-import { centroid, midpoint, payloadFromPolygon, toLatLngs } from "../geometry.js"
+import { centroid, midpoint, payloadFromPolygon, toLatLngs } from "../../helpers/geometry.js"
 import { bindMidHandles, bindMoveHandle, bindVertexHandles } from "./bindHandles.js"
 
 export function renderPolygonEditor({ map, layersRef, polygon, polygonRef, skipFitRef, callbacksRef }) {

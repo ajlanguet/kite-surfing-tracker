@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
-import { bindDraw } from "./bindDraw.js"
-import { createLeafletMap } from "./createLeafletMap.js"
-import { focusMap } from "./focusMap.js"
-import { renderPolygonEditor } from "./PolygonEditor.js"
-import { clearSelectionLayers, renderPin } from "./selectionLayers.js"
-import { setMapInteraction } from "./setMapInteraction.js"
-import { renderSpotMarkers } from "./SpotMarkers.js"
+import { bindDraw } from "./helpers/bindDraw.js"
+import { createLeafletMap } from "./helpers/createLeafletMap.js"
+import { focusMap } from "./helpers/focusMap.js"
+import { renderPolygonEditor } from "./helpers/PolygonEditor.js"
+import { clearSelectionLayers, renderPin } from "./helpers/selectionLayers.js"
+import { setMapInteraction } from "./helpers/setMapInteraction.js"
+import { renderSpotMarkers } from "./helpers/SpotMarkers.js"
 
 export default function MapPicker({ spots, mode, selection, focusTarget, onSelect, onSpotClick }) {
   const rootRef = useRef(null)

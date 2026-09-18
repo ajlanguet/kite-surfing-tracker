@@ -8,7 +8,7 @@ import {
   setFavorite,
   trackPlace,
   untrackSpot,
-} from "../../api"
+} from "../../../api"
 
 export function useSpotDetail() {
   const { slug } = useParams()

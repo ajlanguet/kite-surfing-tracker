@@ -1,4 +1,4 @@
-import { selectionFromPolygon } from "../geometry.js"
+import { selectionFromPolygon } from "../helpers/geometry.js"
 
 export default function VertexRow({ point, index, polygon, onPolygonChange }) {
   function updatePoint(field, raw) {
