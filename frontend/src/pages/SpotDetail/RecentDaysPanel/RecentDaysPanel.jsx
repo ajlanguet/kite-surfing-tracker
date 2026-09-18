@@ -1,4 +1,4 @@
-import { cardinal, formatHour, knots } from "../../utils/wind"
+import DayRow from "./DayRow.jsx"
 
 export default function RecentDaysPanel({ summaries }) {
   return (
@@ -19,13 +19,7 @@ export default function RecentDaysPanel({ summaries }) {
           </thead>
           <tbody>
             {summaries.slice(0, 14).map((row) => (
-              <tr key={row.id}>
-                <td>{row.local_date}</td>
-                <td>{row.rideable_hours}</td>
-                <td>{row.fill_in_hour == null ? "—" : formatHour(row.fill_in_hour)}</td>
-                <td>{knots(row.mean_wind_kt)}</td>
-                <td>{cardinal(row.dominant_direction_deg)}</td>
-              </tr>
+              <DayRow key={row.id} row={row} />
             ))}
           </tbody>
         </table>

@@ -8,7 +8,7 @@ Hourly ingest is the remaining adapter:
 2. Historical: https://www.ndbc.noaa.gov/data/historical/stdmet/{station}h{year}.txt.gz
 3. Parse into CanonicalHour (weather/schema.py). Convert WSPD from m/s with mps_to_kt.
 4. Keep extra columns (WVHT, DPD, APD, MWD, WTMP) in extras or wave_* fields.
-5. Call persist_hours() from weather/services.py.
+5. Call persist_hours() from weather/persist.py.
 
 Do not fetch NOAA from a view. This file should only fetch + parse.
 """

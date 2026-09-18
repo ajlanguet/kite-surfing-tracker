@@ -1,5 +1,5 @@
 import L from "leaflet"
-import { payloadFromPolygon, rectanglePolygon } from "../geometry.js"
+import { payloadFromPolygon, rectanglePolygon } from "../../helpers/geometry.js"
 
 export function bindDraw(map, { modeRef, selectionRef, skipFitRef, drawRef, callbacksRef }) {
   function finishDraw(latlng) {
